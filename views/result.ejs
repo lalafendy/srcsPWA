@@ -1,0 +1,20 @@
+<%- include ('partials/header'); -%>
+<div class="table-wrapper">
+        <% if (product.length > 0) {%>
+        
+                    <% product.forEach((prod, index) => { %>
+                        <div id="box" class ="pro">
+                            <h1><%= prod.product_name %> </h1>
+                            <a href="/view/<%= prod.product_id %>" target="_blank" rel="noopener" class="btn btn-sm btn-success">CLICK</a>
+                            <strong class="price"><%= prod.product_price %></strong>
+
+                        </div>
+                        
+                    <% }) %>
+        <% } else { %>
+            <p class="text-center">No players found. Go <a href="/add" >here</a> to add players.</p>
+        <% } %>
+</div> 
+<script src="/public/pwa.js"></script>
+</body>
+</html>
